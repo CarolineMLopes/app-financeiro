@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-receber',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceberPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+
+  voltarMenu(){
+    this.route.navigate(['/menu'])
   }
 
 }

@@ -1,13 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>receber</ion-title>
+    <ion-title>Recebimento</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">receber</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Novo Recebimento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Cliente</ion-label>
+      <ion-input type="text" placeholder="Nome do Cliente"></ion-input>
+      <ion-label>Vencimento</ion-label>
+      <ion-input type="date"></ion-input>
+      <ion-label>Recebimento</ion-label>  
+      <ion-input type="date"></ion-input>
+      <ion-label>Valor</ion-label>
+      <ion-input type="number" placeholder="Valor do recebimento"></ion-input>
+      <ion-button expand="block">Gravar</ion-button>
+      <ion-button expand="block" (click)="voltarMenu()">Retornar</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

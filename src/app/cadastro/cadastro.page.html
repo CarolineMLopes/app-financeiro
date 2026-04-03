@@ -1,31 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Cadastrar</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Cadastrar Pagamentos</ion-card-title>
-      <ion-card-subtitle>Pagina de Cadastro</ion-card-subtitle>
+      <ion-card-title>Novo Cadastro</ion-card-title>
     </ion-card-header>
-
     <ion-card-content>
-     <ion-item>
-        <ion-label>Nome: </ion-label>
-        <ion-input type="text" placeholder="Digite o nome"></ion-input>
-     </ion-item>
-      <ion-item>
-          <ion-label>Tipo</ion-label>
-          <ion-input type="text" placeholder="Cliente ou Fornecedor"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Endereço</ion-label>
-        <ion-input type="text" placeholder="Digite o endereço"></ion-input>
-      </ion-item>
-       <ion-button expand="block" color="primary">Adicionar</ion-button>
-       <ion-button expand="block" color="primary" (click)="abrirMenu()">Retornar</ion-button>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="usuario.nome"></ion-input>
+      <ion-label>Tipo</ion-label>
+      <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="usuario.tipo"></ion-input>
+      <ion-label>Endereço</ion-label>
+      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="usuario.email"></ion-input>
+      <ion-button expand="block" (click)="cadastrar()">Adicionar</ion-button>
+      <ion-button expand="block" (click)="abrirMenu()">Retornar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let cadastro of listaCadastros; let i = index">
+    <ion-card-header>
+      <ion-card-title>{{ cadastro.nome }}</ion-card-title>
+      <ion-card-subtitle>{{ cadastro.tipo }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Nome:</strong> {{ cadastro.nome }}</p>
+      <p><strong>Tipo:</strong> {{ cadastro.tipo }}</p>
+      <p><strong>Email:</strong> {{ cadastro.email }}</p>
+      <ion-button fill="outline" size="small" color="danger" (click)="excluir(i)">Deletar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

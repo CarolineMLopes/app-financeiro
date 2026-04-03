@@ -5,3 +5,22 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Novo Pagamento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Fornecedor</ion-label>
+      <ion-input type="text" placeholder="Nome do Fornecedor"></ion-input>
+      <ion-label>Vencimento</ion-label>
+      <ion-input type="date"></ion-input>
+      <ion-label>Pagamento</ion-label>  
+      <ion-input type="date"></ion-input>
+      <ion-label>Valor</ion-label>
+      <ion-input type="number" placeholder="Valor do pagamento"></ion-input>
+      <ion-button expand="block">Gravar</ion-button>
+      <ion-button expand="block" (click)="voltarMenu()">Retornar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+ 
