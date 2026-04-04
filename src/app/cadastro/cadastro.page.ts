@@ -39,14 +39,14 @@ export class CadastroPage implements OnInit {
     };
 
     this.listaCadastros.unshift(novoCadastro);
-    this.limparFormulario();
+    this.limparCampos();
   }
 
   excluir(index: number) {
     this.listaCadastros.splice(index, 1);
   }
 
-  limparFormulario() {
+  limparCampos() {
     this.usuario = {
       nome: '',
       tipo: '',
