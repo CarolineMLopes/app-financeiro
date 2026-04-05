@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 interface Usuario {
   nome: string;
   tipo: string;
-  email: string;
+  endereco: string;
 }
 
 @Component({
@@ -19,7 +19,7 @@ export class CadastroPage implements OnInit {
   usuario: Usuario = {
     nome: '',
     tipo: '',
-    email: ''
+    endereco: ''
   };
 
   listaCadastros: any[] = [];
@@ -27,15 +27,15 @@ export class CadastroPage implements OnInit {
   cadastrar() {
     const name = this.usuario.nome.trim();
     const type = this.usuario.tipo.trim();
-    const email = this.usuario.email.trim();
-    if (!name || !type || !email) {
+    const endereco = this.usuario.endereco.trim();
+    if (!name || !type || !endereco) {
       return;
     }
 
     const novoCadastro: Usuario = {
       nome: name,
       tipo: type,
-      email: email
+      endereco: endereco
     };
 
     this.listaCadastros.unshift(novoCadastro);
@@ -50,7 +50,7 @@ export class CadastroPage implements OnInit {
     this.usuario = {
       nome: '',
       tipo: '',
-      email: ''
+      endereco: ''
     };
   }
 

@@ -15,7 +15,7 @@
       <ion-label>Tipo</ion-label>
       <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="usuario.tipo"></ion-input>
       <ion-label>Endereço</ion-label>
-      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="usuario.email"></ion-input>
+      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="usuario.endereco"></ion-input>
       <ion-button expand="block" (click)="cadastrar()">Adicionar</ion-button>
       <ion-button expand="block" (click)="limparCampos()">Limpar</ion-button>
       <ion-button expand="block" (click)="abrirMenu()">Retornar</ion-button>
@@ -28,9 +28,7 @@
       <ion-card-subtitle>{{ cadastro.tipo }}</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <p><strong>Nome:</strong> {{ cadastro.nome }}</p>
-      <p><strong>Tipo:</strong> {{ cadastro.tipo }}</p>
-      <p><strong>Email:</strong> {{ cadastro.email }}</p>
+      <p><strong>Endereço:</strong> {{ cadastro.endereco }}</p>
       <ion-button fill="outline" size="small" color="danger" (click)="excluir(i)">Deletar</ion-button>
     </ion-card-content>
   </ion-card>
