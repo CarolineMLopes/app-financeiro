@@ -4,17 +4,44 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-card>
-    <ion-card-header>
+    <ion-card-header class="ion-text-center">
       <ion-card-title>Bem-vindo</ion-card-title>
-      <ion-card-subtitle>Página de Login</ion-card-subtitle>
+      <ion-card-subtitle>
+        <ion-text color="medium">Informe nome e senha para continuar</ion-text>
+      </ion-card-subtitle>
     </ion-card-header>
+
     <ion-card-content>
-      <ion-label>Nome</ion-label>
-      <ion-input type="text" placeholder="Digite seu nome"></ion-input>
-      <ion-label>Senha</ion-label>
-      <ion-input type="password" placeholder="Digite sua senha"></ion-input>
-      <ion-button expand="block" fill="solid" (click)="abrirMenu()">Avançar</ion-button>
+      <ion-list lines="none" class="ion-no-padding">
+        <ion-item lines="full">
+          <ion-icon slot="start" name="person-outline" aria-hidden="true"></ion-icon>
+          <ion-input
+            label="Nome"
+            labelPlacement="floating"
+            type="text"
+            placeholder="Digite seu nome de usuário"
+            autocomplete="username"
+            inputmode="text"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item lines="full">
+          <ion-icon slot="start" name="lock-closed-outline" aria-hidden="true"></ion-icon>
+          <ion-input
+            label="Senha"
+            labelPlacement="floating"
+            type="password"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="block" class="ion-margin-top" color="primary" (click)="abrirMenu()">
+        Entrar
+      </ion-button>
     </ion-card-content>
   </ion-card>
+</ion-content>
