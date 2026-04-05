@@ -5,7 +5,7 @@ interface Usuario {
   cliente: string;
   vencimento: string;
   recebimento: string;
-  valor: number;
+  valor: string;
 }
 
 @Component({
@@ -20,7 +20,7 @@ export class ReceberPage implements OnInit {
     cliente: '',
     vencimento: '',
     recebimento: '',
-    valor: 0
+    valor: '',
   };
 
   listaRecebimentos: any[] = [];
@@ -29,8 +29,8 @@ export class ReceberPage implements OnInit {
     const cliente = this.usuario.cliente.trim();
     const vencimento = this.usuario.vencimento.trim();
     const recebimento = this.usuario.recebimento.trim();
-    const valor = this.usuario.valor;
-    if (!cliente || !vencimento || !recebimento || valor <= 0) {
+    const valor = this.usuario.valor.trim();
+    if (!cliente || !vencimento || !recebimento || !valor) {
       return;
     }
 
@@ -54,7 +54,7 @@ export class ReceberPage implements OnInit {
       cliente: '',
       vencimento: '',
       recebimento: '',
-      valor: 0
+      valor: '',
     };
   }
 

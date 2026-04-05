@@ -11,16 +11,29 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label>Cliente</ion-label>
-      <ion-input type="text" placeholder="Nome do Cliente"></ion-input>
+      <ion-input type="text" placeholder="Nome do Cliente" [(ngModel)]="usuario.cliente"></ion-input>
       <ion-label>Vencimento</ion-label>
-      <ion-input type="text" placeholder="DD / MM / AAAA"></ion-input>
+      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.vencimento"></ion-input>
       <ion-label>Recebimento</ion-label>  
-      <ion-input type="text" placeholder="DD / MM / AAAA"></ion-input>
+      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.recebimento"></ion-input>
       <ion-label>Valor</ion-label>
-      <ion-input type="number" placeholder="R$ 0,00"></ion-input>
+      <ion-input type="text" placeholder="R$ 0,00" [(ngModel)]="usuario.valor"></ion-input>
       <ion-button expand="block" (click)="receber()">Gravar</ion-button>
       <ion-button expand="block" (click)="limparCampos()">Limpar</ion-button>
       <ion-button expand="block" (click)="voltarMenu()">Retornar</ion-button>
     </ion-card-content>
   </ion-card>
+
+  <ion-card *ngFor="let recebimento of listaRecebimentos; let i = index">
+    <ion-card-header>
+      <ion-card-title><strong>Cliente:</strong> {{ recebimento.cliente }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Vencimento:</strong> {{ recebimento.vencimento }}</p>
+      <p><strong>Recebimento:</strong> {{ recebimento.recebimento }}</p>
+      <p><strong>Valor:</strong> R$ {{ recebimento.valor }}</p>
+      <ion-button fill="outline" size="small" color="danger" (click)="excluir(i)">Deletar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
