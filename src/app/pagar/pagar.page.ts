@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 interface Pagar {
   fornecedor: string;
-  vencimento: string;
-  pagamento: string;
+  vencimento: Date;
+  pagamento: Date;
   valor: string;
 }
 
@@ -18,8 +18,8 @@ export class PagarPage implements OnInit {
 
     pagar: Pagar     = {
     fornecedor: '',
-    vencimento: '',
-    pagamento: '',
+    vencimento: new Date(),
+    pagamento: new Date(),
     valor: ''
   };
 
@@ -27,8 +27,8 @@ export class PagarPage implements OnInit {
 
   pagamento() {
     const fornecedor = this.pagar.fornecedor.trim();
-    const vencimento = this.pagar.vencimento.trim();
-    const pagamento = this.pagar.pagamento.trim();
+    const vencimento = this.pagar.vencimento.toString().trim();
+    const pagamento = this.pagar.pagamento.toString().trim();
     const valor = this.pagar.valor.trim();
     if (!fornecedor || !vencimento || !pagamento || !valor) {
       return;
@@ -36,8 +36,8 @@ export class PagarPage implements OnInit {
 
     const novoPagamento: Pagar = {
       fornecedor: fornecedor,
-      vencimento: vencimento,
-      pagamento: pagamento,
+      vencimento: new Date(vencimento),
+      pagamento: new Date(pagamento),
       valor: valor
     };
 
@@ -52,8 +52,8 @@ export class PagarPage implements OnInit {
   limparCampos() {
     this.pagar = {
       fornecedor: '',
-      vencimento: '',
-      pagamento: '',
+      vencimento: new Date(),
+      pagamento: new Date(),
       valor: ''
     };
   }
