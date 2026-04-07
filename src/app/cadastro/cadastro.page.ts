@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularDelegate } from '@ionic/angular';
 import { Router } from '@angular/router';
 
-interface Usuario {
+interface Cadastro {
   nome: string;
   tipo: string;
   endereco: string;
@@ -16,7 +16,7 @@ interface Usuario {
 })
 export class CadastroPage implements OnInit {
   
-  usuario: Usuario = {
+  cadastro: Cadastro = {
     nome: '',
     tipo: '',
     endereco: ''
@@ -25,14 +25,14 @@ export class CadastroPage implements OnInit {
   listaCadastros: any[] = [];
 
   cadastrar() {
-    const name = this.usuario.nome.trim();
-    const type = this.usuario.tipo.trim();
-    const endereco = this.usuario.endereco.trim();
+    const name = this.cadastro.nome.trim();
+    const type = this.cadastro.tipo.trim();
+    const endereco = this.cadastro.endereco.trim();
     if (!name || !type || !endereco) {
       return;
     }
 
-    const novoCadastro: Usuario = {
+    const novoCadastro: Cadastro = {
       nome: name,
       tipo: type,
       endereco: endereco
@@ -47,7 +47,7 @@ export class CadastroPage implements OnInit {
   }
 
   limparCampos() {
-    this.usuario = {
+    this.cadastro = {
       nome: '',
       tipo: '',
       endereco: ''
