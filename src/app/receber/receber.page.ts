@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface Usuario {
+interface Recebimento {
   cliente: string;
   vencimento: string;
   recebimento: string;
-  valor: string;
+  valor: number;
 }
 
 @Component({
@@ -16,25 +16,25 @@ interface Usuario {
 })
 export class ReceberPage implements OnInit {
 
-  usuario: Usuario   = {
+  receber: Recebimento   = {
     cliente: '',
     vencimento: '',
     recebimento: '',
-    valor: '',
+    valor: 0,
   };
 
   listaRecebimentos: any[] = [];
 
-  receber() {
-    const cliente = this.usuario.cliente.trim();
-    const vencimento = this.usuario.vencimento.trim();
-    const recebimento = this.usuario.recebimento.trim();
-    const valor = this.usuario.valor.trim();
-    if (!cliente || !vencimento || !recebimento || !valor) {
+  Receber() {
+    const cliente = this.receber.cliente.trim();
+    const vencimento = this.receber.vencimento.trim();
+    const recebimento = this.receber.recebimento.trim();
+    const valor = parseFloat(this.receber.valor.toString().trim());
+    if (!cliente || !vencimento || !recebimento || valor <= 0) {
       return;
     }
 
-    const novoRecebimento: Usuario = {
+    const novoRecebimento: Recebimento = {
       cliente: cliente,
       vencimento: vencimento,
       recebimento: recebimento,
@@ -50,12 +50,18 @@ export class ReceberPage implements OnInit {
   }
 
   limparCampos() {
-    this.usuario = {
+    this.receber = {
       cliente: '',
       vencimento: '',
       recebimento: '',
-      valor: '',
+      valor: 0,
     };
+  }
+
+  formatarData(data: string): string {
+    if (!data || !data.includes('-')) return data;
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}/${mes}/${ano}`;
   }
 
   constructor(private route: Router) { }

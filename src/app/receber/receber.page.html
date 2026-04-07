@@ -11,15 +11,15 @@
       <ion-card-title>Novo Recebimento</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-label>Cliente</ion-label>
-      <ion-input type="text" placeholder="Nome do Cliente" [(ngModel)]="usuario.cliente"></ion-input>
-      <ion-label>Vencimento</ion-label>
-      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.vencimento"></ion-input>
-      <ion-label>Recebimento</ion-label>  
-      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.recebimento"></ion-input>
-      <ion-label>Valor</ion-label>
-      <ion-input type="text" placeholder="R$ 0,00" [(ngModel)]="usuario.valor"></ion-input>
-      <ion-button expand="block" style="--background: #2da10d; --color: white;"(click)="receber()">Gravar</ion-button>
+      <ion-label> Cliente </ion-label>
+      <ion-input type="text" placeholder="Nome do Cliente" [(ngModel)]="receber.cliente"></ion-input>
+      <ion-label> Vencimento </ion-label>
+      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="receber.vencimento"></ion-input>
+      <ion-label> Recebimento </ion-label>  
+      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="receber.recebimento"></ion-input>
+      <ion-label> Valor </ion-label>
+      <ion-input type="number" placeholder="R$ 0,00" [(ngModel)]="receber.valor"></ion-input>
+      <ion-button expand="block" style="--background: #2da10d; --color: white;"(click)="Receber()">Gravar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content>
   </ion-card>
@@ -29,8 +29,8 @@
       <ion-card-title><strong>Cliente:</strong> {{ recebimento.cliente }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p><strong>Vencimento:</strong> {{ recebimento.vencimento }}</p>
-      <p><strong>Recebimento:</strong> {{ recebimento.recebimento }}</p>
+      <p><strong>Vencimento:</strong> {{ formatarData(recebimento.vencimento) }}</p>
+      <p><strong>Recebimento:</strong> {{ formatarData(recebimento.recebimento) }}</p>
       <p><strong>Valor:</strong> R$ {{ recebimento.valor }}</p>
       <ion-button fill="outline" size="small" color="danger" (click)="excluir(i)">Deletar</ion-button>
     </ion-card-content>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface Pagar {
+interface Pagamento {
   fornecedor: string;
   vencimento: string;
   pagamento: string;
@@ -16,7 +16,7 @@ interface Pagar {
 })
 export class PagarPage implements OnInit {
 
-    pagar: Pagar     = {
+    pagar: Pagamento     = {
     fornecedor: '',
     vencimento: '',
     pagamento: '',
@@ -25,7 +25,7 @@ export class PagarPage implements OnInit {
 
   listaPagamentos: any[] = [];
 
-  pagamento() {
+  Pagar() {
     const fornecedor = this.pagar.fornecedor.trim();
     const vencimento = this.pagar.vencimento.toString().trim();
     const pagamento = this.pagar.pagamento.toString().trim();
@@ -34,7 +34,7 @@ export class PagarPage implements OnInit {
       return;
     }
 
-    const novoPagamento: Pagar = {
+    const novoPagamento: Pagamento = {
       fornecedor: fornecedor,
       vencimento: vencimento,
       pagamento: pagamento,
