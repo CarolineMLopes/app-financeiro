@@ -12,14 +12,23 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label>Nome</ion-label>
-      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="cadastro.nome"></ion-input>
+      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="cadastro.nome"></ion-input><br>
       <ion-label>Tipo</ion-label>
-      <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="cadastro.tipo"></ion-input>
+      <ion-radio-group value="custom-checked" [(ngModel)]="cadastro.tipo">
+        <ion-item>
+          <ion-label>Cliente</ion-label>
+          <ion-radio slot="start" value="Cliente"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fornecedor</ion-label>
+          <ion-radio slot="start" value="Fornecedor"></ion-radio>
+        </ion-item>
+      </ion-radio-group> <br>
       <ion-label>Endereço</ion-label>
-      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="cadastro.endereco"></ion-input>
+      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="cadastro.endereco"></ion-input><br>
       <ion-button expand="block" style="--background: #b300b6; --color: white;" (click)="cadastrar()">Adicionar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
-    </ion-card-content>
+    </ion-card-content> 
   </ion-card>
 
   <ion-card *ngFor="let cadastro of listaCadastros; let i = index">
