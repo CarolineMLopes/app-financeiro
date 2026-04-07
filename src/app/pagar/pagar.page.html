@@ -12,13 +12,13 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label>Fornecedor</ion-label>
-      <ion-input type="text" placeholder="Nome do Fornecedor" [(ngModel)]="usuario.fornecedor"></ion-input>
+      <ion-input type="text" placeholder="Nome do Fornecedor" [(ngModel)]="pagar.fornecedor"></ion-input>
       <ion-label>Vencimento</ion-label>
-      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.vencimento"></ion-input>
+      <ion-input type="Date" placeholder="DD / MM / AAAA" [(ngModel)]="pagar.vencimento"></ion-input>
       <ion-label>Pagamento</ion-label>  
-      <ion-input type="text" placeholder="DD / MM / AAAA" [(ngModel)]="usuario.pagamento"></ion-input>
+      <ion-input type="Date" placeholder="DD / MM / AAAA" [(ngModel)]="pagar.pagamento"></ion-input>
       <ion-label>Valor</ion-label>
-      <ion-input type="text" placeholder="R$ 0,00" [(ngModel)]="usuario.valor"></ion-input>
+      <ion-input type="text" placeholder="R$ 0,00" [(ngModel)]="pagar.valor"></ion-input>
       <ion-button expand="block" color="danger" (click)="pagamento()">Gravar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content>
