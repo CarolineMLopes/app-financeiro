@@ -11,14 +11,26 @@
       <ion-card-title>Novo Recebimento</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-label> Cliente </ion-label>
-      <ion-input type="text" placeholder="Nome do Cliente" [(ngModel)]="receber.cliente"></ion-input>
-      <ion-label> Vencimento </ion-label>
-      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="receber.vencimento"></ion-input>
-      <ion-label> Recebimento </ion-label>  
-      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="receber.recebimento"></ion-input>
-      <ion-label> Valor </ion-label>
-      <ion-input type="number" placeholder="R$ 0,00" [(ngModel)]="receber.valor"></ion-input>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="person-outline" slot="start" style="color: #2da10d;"></ion-icon>
+        <ion-input label="Cliente" label-placement="floating" type="text" placeholder="Digite o nome do cliente" [(ngModel)]="receber.cliente">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="calendar-outline" slot="start" style="color: #2da10d;"></ion-icon>
+        <ion-input label="Vencimento" label-placement="floating" type="date" placeholder="Data de vencimento" [(ngModel)]="receber.vencimento">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="calendar-outline" slot="start" style="color: #2da10d;"></ion-icon>
+        <ion-input label="Recebimento" label-placement="floating" type="date" placeholder="Data de recebimento" [(ngModel)]="receber.recebimento">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="cash-outline" slot="start" style="color: #2da10d;"></ion-icon>
+        <ion-input label="Valor" label-placement="floating" type="number" placeholder="R$ 0,00" [(ngModel)]="receber.valor">
+        </ion-input>
+      </ion-item>
       <ion-button expand="block" style="--background: #2da10d; --color: white;"(click)="Receber()">Gravar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content>
