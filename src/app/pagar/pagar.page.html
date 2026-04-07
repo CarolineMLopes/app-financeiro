@@ -11,14 +11,26 @@
       <ion-card-title>Novo Pagamento</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-label> Fornecedor </ion-label>
-      <ion-input type="text" placeholder="Nome do Fornecedor" [(ngModel)]="pagar.fornecedor"></ion-input>
-      <ion-label> Vencimento </ion-label>
-      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="pagar.vencimento"></ion-input>
-      <ion-label> Pagamento </ion-label>  
-      <ion-input type="date" placeholder="DD / MM / AAAA" [(ngModel)]="pagar.pagamento"></ion-input>
-      <ion-label> Valor </ion-label>
-      <ion-input type="number" placeholder="R$ 0,00" [(ngModel)]="pagar.valor"></ion-input>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="person-outline" slot="start" color="danger"></ion-icon>
+        <ion-input label="Fornecedor" label-placement="floating" type="text" placeholder="Digite o nome do fornecedor" [(ngModel)]="pagar.fornecedor">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="calendar-outline" slot="start" color="danger"></ion-icon>
+        <ion-input label="Vencimento" label-placement="floating" type="date" placeholder="Data de vencimento" [(ngModel)]="pagar.vencimento">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="calendar-outline" slot="start" color="danger"></ion-icon>
+        <ion-input label="Pagamento" label-placement="floating" type="date" placeholder="Data de pagamento" [(ngModel)]="pagar.pagamento">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="full" class="ion-margin-bottom">
+      <ion-icon name="cash-outline" slot="start" color="danger"></ion-icon>
+        <ion-input label="Valor" label-placement="floating" type="number" placeholder="R$ 0,00" [(ngModel)]="pagar.valor">
+        </ion-input>
+      </ion-item>
       <ion-button expand="block" color="danger" (click)="Pagar()">Gravar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content>
