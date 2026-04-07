@@ -11,8 +11,11 @@
       <ion-card-title>Novo Cadastro</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-label>Nome</ion-label>
-      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="cadastro.nome"></ion-input><br>
+      <ion-item lines="full" class="ion-margin-bottom">
+        <ion-icon name="person-outline" slot="start" style="color: #b300b6;"></ion-icon>
+        <ion-input label="Usuário" label-placement="floating" type="text" placeholder="Digite seu nome" [(ngModel)]="cadastro.nome">
+        </ion-input>
+      </ion-item>
       <ion-label>Tipo</ion-label>
       <ion-radio-group value="custom-checked" [(ngModel)]="cadastro.tipo">
         <ion-item>
@@ -24,8 +27,11 @@
           <ion-radio slot="start" value="Fornecedor"></ion-radio>
         </ion-item>
       </ion-radio-group> <br>
-      <ion-label>Endereço</ion-label>
-      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="cadastro.endereco"></ion-input><br>
+      <ion-item lines="full" class="ion-margin-bottom">
+        <ion-icon name="location-outline" slot="start" style="color: #b300b6;"></ion-icon>
+        <ion-input label="Endereço" label-placement="floating" type="text" placeholder="Digite seu endereço" [(ngModel)]="cadastro.endereco">
+        </ion-input>
+      </ion-item>
       <ion-button expand="block" style="--background: #b300b6; --color: white;" (click)="cadastrar()">Adicionar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content> 
