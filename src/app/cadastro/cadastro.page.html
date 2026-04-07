@@ -12,11 +12,11 @@
     </ion-card-header>
     <ion-card-content>
       <ion-label>Nome</ion-label>
-      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="usuario.nome"></ion-input>
+      <ion-input type="text" placeholder="Digite o nome" [(ngModel)]="cadastro.nome"></ion-input>
       <ion-label>Tipo</ion-label>
-      <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="usuario.tipo"></ion-input>
+      <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="cadastro.tipo"></ion-input>
       <ion-label>Endereço</ion-label>
-      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="usuario.endereco"></ion-input>
+      <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="cadastro.endereco"></ion-input>
       <ion-button expand="block" style="--background: #b300b6; --color: white;" (click)="cadastrar()">Adicionar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
     </ion-card-content>

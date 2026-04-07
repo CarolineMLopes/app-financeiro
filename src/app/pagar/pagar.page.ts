@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 interface Pagar {
   fornecedor: string;
-  vencimento: Date;
-  pagamento: Date;
-  valor: string;
-}
+  vencimento: string;
+  pagamento: string;
+  valor: number;
+} 
 
 @Component({
   selector: 'app-pagar',
@@ -18,9 +18,9 @@ export class PagarPage implements OnInit {
 
     pagar: Pagar     = {
     fornecedor: '',
-    vencimento: new Date(),
-    pagamento: new Date(),
-    valor: ''
+    vencimento: '',
+    pagamento: '',
+    valor: 0
   };
 
   listaPagamentos: any[] = [];
@@ -29,15 +29,15 @@ export class PagarPage implements OnInit {
     const fornecedor = this.pagar.fornecedor.trim();
     const vencimento = this.pagar.vencimento.toString().trim();
     const pagamento = this.pagar.pagamento.toString().trim();
-    const valor = this.pagar.valor.trim();
-    if (!fornecedor || !vencimento || !pagamento || !valor) {
+    const valor = parseFloat(this.pagar.valor.toString().trim());
+    if (!fornecedor || !vencimento || !pagamento || valor <= 0) {
       return;
     }
 
     const novoPagamento: Pagar = {
       fornecedor: fornecedor,
-      vencimento: new Date(vencimento),
-      pagamento: new Date(pagamento),
+      vencimento: vencimento,
+      pagamento: pagamento,
       valor: valor
     };
 
@@ -52,10 +52,16 @@ export class PagarPage implements OnInit {
   limparCampos() {
     this.pagar = {
       fornecedor: '',
-      vencimento: new Date(),
-      pagamento: new Date(),
-      valor: ''
+      vencimento: '',
+      pagamento: '',
+      valor: 0
     };
+  }
+
+  formatarData(data: string): string {
+    if (!data || !data.includes('-')) return data;
+    const [ano, mes, dia] = data.split('-');
+    return `${dia}/${mes}/${ano}`;
   }
 
   constructor(private route: Router) { }
