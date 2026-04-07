@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar style="--background: #b300b6; --color: white;">
     <ion-title>Cadastro</ion-title>
+    <ion-back-button defaultHref="/menu" slot="start"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
@@ -16,9 +17,8 @@
       <ion-input type="text" placeholder="Cliente ou Fornecedor" [(ngModel)]="usuario.tipo"></ion-input>
       <ion-label>Endereço</ion-label>
       <ion-input type="text" placeholder="Digite o endereço" [(ngModel)]="usuario.endereco"></ion-input>
-      <ion-button expand="block" color="success" (click)="cadastrar()">Adicionar</ion-button>
+      <ion-button expand="block" style="--background: #b300b6; --color: white;" (click)="cadastrar()">Adicionar</ion-button>
       <ion-button expand="block" color="warning" fill="outline" (click)="limparCampos()">Limpar</ion-button>
-      <ion-button expand="block" color="medium" fill="clean" (click)="abrirMenu()">Retornar</ion-button>
     </ion-card-content>
   </ion-card>
 
