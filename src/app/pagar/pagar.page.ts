@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface Usuario {
+interface Pagar {
   fornecedor: string;
   vencimento: string;
   pagamento: string;
@@ -16,7 +16,7 @@ interface Usuario {
 })
 export class PagarPage implements OnInit {
 
-    usuario: Usuario   = {
+    pagar: Pagar     = {
     fornecedor: '',
     vencimento: '',
     pagamento: '',
@@ -26,15 +26,15 @@ export class PagarPage implements OnInit {
   listaPagamentos: any[] = [];
 
   pagamento() {
-    const fornecedor = this.usuario.fornecedor.trim();
-    const vencimento = this.usuario.vencimento.trim();
-    const pagamento = this.usuario.pagamento.trim();
-    const valor = this.usuario.valor.trim();
+    const fornecedor = this.pagar.fornecedor.trim();
+    const vencimento = this.pagar.vencimento.trim();
+    const pagamento = this.pagar.pagamento.trim();
+    const valor = this.pagar.valor.trim();
     if (!fornecedor || !vencimento || !pagamento || !valor) {
       return;
     }
 
-    const novoPagamento: Usuario = {
+    const novoPagamento: Pagar = {
       fornecedor: fornecedor,
       vencimento: vencimento,
       pagamento: pagamento,
@@ -50,7 +50,7 @@ export class PagarPage implements OnInit {
   }
 
   limparCampos() {
-    this.usuario = {
+    this.pagar = {
       fornecedor: '',
       vencimento: '',
       pagamento: '',
